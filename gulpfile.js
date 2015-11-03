@@ -6,36 +6,24 @@ var source = require('vinyl-source-stream');
 var plumber = require('gulp-plumber');
 var webserver = require('gulp-webserver');
 
+gulp.task('jade', function() {
+  gulp
+  .src('src/index.jade')
+  .pipe(jade())
+  .pipe(gulp.dest('dist/'))
+  ;
+});
+
 gulp.task('browserify', function() {
   browserify({ entries: ['src/js/components.js'] })
-  .transform(riotify, { templates: 'jade' })
+  .transform(riotify, { 'template': 'jade' })
   .bundle()
   .pipe(source('components.js'))
   .pipe(gulp.dest('dist/js/'))
   ;
 });
 
-gulp.task('scripts', function() {
-  gulp
-  .src([
-    './src/js/main.js',
-    './src/js/**/*.js'
-  ])
-  .pipe(plumber())
-  .pipe(gulp.dest('dist/js/'))
-  ;
-});
-
-gulp.task('jade', function() {
-  gulp
-  .src('./src/index.jade')
-  .pipe(plumber())
-  .pipe(jade())
-  .pipe(gulp.dest('dist/'))
-  ;
-});
-
-gulp.task('webserver', ['browserify', 'scripts', 'jade'], function() {
+gulp.task('webserver', ['browserify', 'jade'], function() {
   gulp
   .src('dist')
   .pipe(
@@ -47,3 +35,5 @@ gulp.task('webserver', ['browserify', 'scripts', 'jade'], function() {
   ;
 
 });
+
+gulp.task('default', ['webserver']);
