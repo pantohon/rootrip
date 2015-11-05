@@ -3,13 +3,14 @@ rootrip-app.wrapper
     p るーとりっぷ
 
   rootrip-portal
-  
+
   rootrip-container
-  
+
   aside
     p hoge
 
   style.
-    .wrapper {
+    rootrip-app {
       display: flex;
+      height: 100%;
     }

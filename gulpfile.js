@@ -23,17 +23,26 @@ gulp.task('browserify', function() {
   ;
 });
 
-gulp.task('webserver', ['browserify', 'jade'], function() {
+gulp.task('images', function() {
+  gulp
+  .src('src/img/**/*')
+  .pipe(gulp.dest('dist/images/'))
+  ;
+});
+
+gulp.task('webserver', ['browserify', 'jade', 'images'], function() {
   gulp
   .src('dist')
   .pipe(
     webserver({
-      port: 3333,
+      port: 2222,
       livereload: true
     })
   )
   ;
 
+  gulp.watch('src/index.jade', ['jade']);
+  gulp.watch('src/js/custom-tag/*', ['browserify']);
 });
 
 gulp.task('default', ['webserver']);
