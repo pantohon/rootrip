@@ -12,11 +12,20 @@ rootrip-container(show='{ spot }')
     .container_content
       .container_user_content
         .container_articles
+
           h3 Article
           .container_article
             .article_date { article.date }
             .article_title { article.title }
-      
+
+          .container_article
+            .article_date { article.date }
+            .article_title { article.title }
+
+          .container_article
+            .article_date { article.date }
+            .article_title { article.title }
+
       .container_master_content
 
         .container_info
@@ -82,27 +91,45 @@ rootrip-container(show='{ spot }')
       border: solid 2px;
     }
     
+    .container_content {
+      overflow-y: scroll;
+    }
+
+    .container_summary {
+      background-color: #E3F2FD;
+    }
+
+    .container_articles {
+      padding: 5px;
+    }
+
+    .container_article {
+      margin: 3px 0 5px 2px;
+      padding: 2px 3px;
+      box-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+      background-color: #E3F2FD;
+    }
+
+    .container_info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
     .container_thumbnail {
       text-align: center;
     }
-    
+
     .container_thumbnail img {
       width: 80%;
     }
 
   script.
-    this.spot = {
-      genre: 'eat',
-      title: '遊山',
-      distance: '5',
-      address: '神奈川県鎌倉市雪ノ下1-9-29 金子ビル2F',
-      phone: '0467-25-2717',
-      holiday: '木',
-      buisiness_hour: '10:00〜18:30',
-      thumbnail: 'yuzan.jpg'
-    };
+    this.spot = opts.spot;
     
     this.article = {
       date: '2015-10-23',
-      title: 'hogehoge'
+      title: 'hogehoge',
+      url: '',
+      image: ''
     };
