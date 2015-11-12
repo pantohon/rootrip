@@ -10,7 +10,8 @@
     "gulp-plumber": "^1.0.1",
     "gulp-webserver": "^0.9.1",
     "jade": "^1.11.0",
-    "riot": "^2.2.4",
+    "object-assign": "^4.0.1",
+    "riot": "^2.3.1",
     "riotify": "^0.1.2",
     "vinyl-source-stream": "^1.1.0"
   },
