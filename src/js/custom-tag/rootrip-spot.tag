@@ -1,7 +1,7 @@
-rootrip-spot(class='{ selected: spot.id == selected_id }' onClick='{ parent.change_selected }')
+rootrip-spot(class='{ selected: spot.id == parent.stateStore.selectedSpotId }' onClick='{ parent.changeSelected }')
   .spot_id { spot.id }
   .spot_name { spot.name }
-  .spot_distance { spot.distance } min.
+  .spot_distance { getDistance() } min.
 
   style.
     rootrip-spot {
@@ -12,7 +12,13 @@ rootrip-spot(class='{ selected: spot.id == selected_id }' onClick='{ parent.chan
       padding: 1px 4px;
       border-radius: 2px;
     }
-    
+
+    rootrip-spot:hover {
+      margin: 1px 4px 1px 3px;
+      font-weight: bold;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+
     .selected {
       color: #FFFFFF;
       background-color: #795548;
@@ -32,4 +38,16 @@ rootrip-spot(class='{ selected: spot.id == selected_id }' onClick='{ parent.chan
     }
 
   script.
-    this.spot = opts.spot;
+    this.nearby = this.spot.nearestStations;
+
+    this.getDistance = () => {
+      var stateStore = require('../store/StateStore');
+      for (var i = 0; i < this.nearby.length; i++) {
+        if (this.nearby[i].routeId == stateStore.selectedRouteId) {
+          if (this.nearby[i].stationId == stateStore.selectedStationId) {
+            return this.nearby[i].distance;
+          }
+        }
+      }
+      return null;
+    };

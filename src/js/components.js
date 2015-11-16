@@ -1,13 +1,12 @@
-var riot = require('riot');
+import riot from 'riot'
 
-require('./custom-tag/rootrip-app.tag');
-require('./custom-tag/rootrip-portal.tag');
-require('./custom-tag/rootrip-container.tag');
-require('./custom-tag/rootrip-playbar.tag');
+import './custom-tag/rootrip-app.tag'
+import './custom-tag/rootrip-portal.tag'
+import './custom-tag/rootrip-container.tag'
+import './custom-tag/rootrip-playbar.tag'
+import './custom-tag/rootrip-player.tag'
 
-require('./custom-tag/rootrip-spots.tag');
-require('./custom-tag/rootrip-spot.tag');
-
-require('./custom-tag/p2h-table.tag');
+import './custom-tag/rootrip-spots.tag'
+import './custom-tag/rootrip-spot.tag'
 
 riot.mount('*');
