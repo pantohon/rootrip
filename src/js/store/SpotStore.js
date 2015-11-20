@@ -10,8 +10,8 @@ class SpotStore {
         id: 1,
         name: '遊山',
         slug: 'yuzan',
-        genre: 'food',
-        image: '',
+        genre: 'eat',
+        image: 'yuzan.jpg',
         description: '鎌倉の歴史に比べれば僅かな時間ですが、遊山も鎌倉で７年の年月をかさねて参りました。歴史が不変である様に、変わらぬ味と香の珈琲をお届けしたいと考えております。鎌倉の常連様に愛され、初めてお目にかかる方に親しまれる様、勤めてまいります。鎌倉にお越しの際は、是非思い出の一つに遊山をお加え頂ければ幸いに存じます。お目にかかれる日を楽しみに致しております。',
         url: 'http://tabelog.com/kanagawa/A1404/A140402/14008019/',
         nearestStations: [
@@ -26,8 +26,8 @@ class SpotStore {
         id: 2,
         name: '遊山2',
         slug: 'yuzan2',
-        genre: 'food',
-        image: '',
+        genre: 'eat',
+        image: 'yuzan.jpg',
         description: '鎌倉の歴史に比べれば僅かな時間ですが、遊山も鎌倉で７年の年月をかさねて参りました。歴史が不変である様に、変わらぬ味と香の珈琲をお届けしたいと考えております。鎌倉の常連様に愛され、初めてお目にかかる方に親しまれる様、勤めてまいります。鎌倉にお越しの際は、是非思い出の一つに遊山をお加え頂ければ幸いに存じます。お目にかかれる日を楽しみに致しております。',
         url: 'http://tabelog.com/kanagawa/A1404/A140402/14008019/',
         nearestStations: [
@@ -42,8 +42,8 @@ class SpotStore {
         id: 3,
         name: '遊山3',
         slug: 'yuzan3',
-        genre: 'food',
-        image: '',
+        genre: 'eat',
+        image: 'yuzan.jpg',
         description: '鎌倉の歴史に比べれば僅かな時間ですが、遊山も鎌倉で７年の年月をかさねて参りました。歴史が不変である様に、変わらぬ味と香の珈琲をお届けしたいと考えております。鎌倉の常連様に愛され、初めてお目にかかる方に親しまれる様、勤めてまいります。鎌倉にお越しの際は、是非思い出の一つに遊山をお加え頂ければ幸いに存じます。お目にかかれる日を楽しみに致しております。',
         url: 'http://tabelog.com/kanagawa/A1404/A140402/14008019/',
         nearestStations: [
