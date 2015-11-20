@@ -1,27 +1,26 @@
 rootrip-app.wrapper
   header
-    p るーとりっぷ
 
   rootrip-portal
 
-  rootrip-container(spot='{ spot }')
+  rootrip-container(spot='{ selectedSpot }')
 
   aside
-    rootrip-playbar(route='{ selected_route }')
+    rootrip-playbar(route='{ selectedRoute }')
 
   style.
     rootrip-app {
       display: flex;
       height: 100%;
     }
-    
+
     header {
-      width: 50px;
-      min-width: 50px;
+      width: 30px;
+      min-width: 30px;
       color: #3E2723;
-      background-color: #E3F2FD;
+      background-color: #FFFFFF;
     }
-    
+
     aside {
       width: 250px;
       min-width: 250px;
@@ -32,24 +31,24 @@ rootrip-app.wrapper
     }
     
   script.
-    import routeAction from '../action/RouteAction'
-    import routeStore from '../store/RouteStore'
-    import dispatcher from '../dispatcher/Dispatcher'
-    import stateStore from '../store/StateStore'
+    this.routeAction = require('../action/RouteAction');
+    this.routeStore = require('../store/RouteStore');
+    this.stationStore = require('../store/StationStore');
+    this.spotStore = require('../store/SpotStore');
+    this.dispatcher = require('../dispatcher/Dispatcher');
+    this.stateStore = require('../store/StateStore');
+    var utility = require('../utility');
 
-    this.selected_route = {
-      id: 'r1',
-      name: '江ノ島電鉄',
-      image: 'enoden.jpg'
+    this.selectedSpot = this.spotStore.spots[0];
+    this.selectedRoute = this.routeStore.routes[0];
+
+    this.getSelectedStation = () => {
+      var stations = this.stationStore.stations;
+      var selectedId = this.stateStore.selectedStationId;
+      for (var i = 0; i < stations.length; i++) {
+        if (stations[i].id == selectedId) {
+          return stations[i];
+        }
+      }
+      return null;
     }
-
-    this.spot = {
-      genre: 'eat',
-      title: '遊山',
-      distance: '5',
-      address: '神奈川県鎌倉市雪ノ下1-9-29 金子ビル2F',
-      phone: '0467-25-2717',
-      holiday: '木',
-      buisiness_hour: '10:00〜18:30',
-      thumbnail: 'yuzan.jpg'
-    };

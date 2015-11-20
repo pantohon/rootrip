@@ -1,7 +1,7 @@
 rootrip-spot(class='{ selected: spot.id == parent.stateStore.selectedSpotId }' onClick='{ parent.changeSelected }')
   .spot_id { spot.id }
   .spot_name { spot.name }
-  .spot_distance { getDistance() } min.
+  .spot_distance { distance } min.
 
   style.
     rootrip-spot {
@@ -38,16 +38,10 @@ rootrip-spot(class='{ selected: spot.id == parent.stateStore.selectedSpotId }' o
     }
 
   script.
-    this.nearby = this.spot.nearestStations;
+    this.stateStore = require('../store/StateStore');
+    var utility = require('../utility');
 
-    this.getDistance = () => {
-      var stateStore = require('../store/StateStore');
-      for (var i = 0; i < this.nearby.length; i++) {
-        if (this.nearby[i].routeId == stateStore.selectedRouteId) {
-          if (this.nearby[i].stationId == stateStore.selectedStationId) {
-            return this.nearby[i].distance;
-          }
-        }
-      }
-      return null;
-    };
+    this.distance = utility.getDistance(
+      this.spot.nearestStations, 
+      this.stateStore.selectedRouteId, 
+      this.stateStore.selectedStationId);

@@ -1,13 +1,13 @@
-rootrip-container(show='{ spot }')
+rootrip-container(show='{ parent.selectedSpot }')
   article.container_wrapper
     .container_header
       .container_title
         img(class='genre_icon' src='images/util/{ spot.genre }.jpg' alt='')
-        h2.main_title { spot.title }
+        h2.main_title { spot.name }
         .distance_wrapper
-          .distance { spot.distance }
+          .distance { distance }
 
-      .container_summary チーズケーキが絶品のオシャレな隠れ家的喫茶店。
+      .container_summary { spot.description }
       
     .container_content
       .container_user_content
@@ -29,13 +29,13 @@ rootrip-container(show='{ spot }')
       .container_master_content
 
         .container_info
-          .address { spot.address }
-          .phone_number { spot.phone }
-          .holiday { spot.holiday }曜日
-          .buisiness_hour { spot.buisiness_hour }
+          .address じゅうしょ
+          .phone_number でんわばんごう
+          .holiday きゅうぎょうび
+          .buisiness_hour えいぎょうじかん
           
         .container_thumbnail
-          img(src='images/spot/{ spot.thumbnail }' alt='')
+          img(src='images/spot/{ spot.image }' alt='')
 
   style.
     rootrip-container {
@@ -125,8 +125,23 @@ rootrip-container(show='{ spot }')
     }
 
   script.
-    this.spot = opts.spot;
-    
+    this.spotAction = require('../action/SpotAction');
+    this.spotStore = require('../store/SpotStore');
+    this.dispatcher = require('../dispatcher/Dispatcher');
+    this.stateStore = require('../store/StateStore');
+    var utility = require('../utility');
+
+    this.spot = utility.getSelectedSpot(
+      this.spotStore.spots, 
+      this.stateStore.selectedSpotId
+      );
+
+    this.distance = utility.getDistance(
+      this.spot.nearestStations, 
+      this.stateStore.selectedRouteId, 
+      this.stateStore.selectedStationId
+      );
+
     this.article = {
       date: '2015-10-23',
       title: 'hogehoge',

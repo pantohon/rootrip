@@ -1,7 +1,7 @@
 rootrip-player
-  .current_station { parent.getSelectedStation().name }
-  .prev_station(onClick='{ parent.gotoPrevStation }') { parent.getPrevStation().name }
-  .next_station(onClick='{ parent.gotoNextStation }') { parent.getNextStation().name }
+  .current_station { parent.selectedStation.name }
+  .prev_station(onClick='{ gotoPrevStation }') { parent.getPrevStation().name }
+  .next_station(onClick='{ gotoNextStation }') { parent.getNextStation().name }
 
   style.
     rootrip-player {
@@ -41,4 +41,25 @@ rootrip-player
       width: 114px;
       font-weight: bold;
       box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+
+  script.
+    this.stationStore = require('../store/StationStore');
+    this.stateStore = require('../store/StateStore');
+    var utility = require('../utility');
+
+    this.station = utility.getSelectedStation(this.stationStore.stations, this.stateStore.selectedStationId);
+
+    this.gotoNextStation = () => {
+      var nextId = this.station.nextId;
+      if(nextId) {
+        this.stateStore.selectedStationId = nextId;
+      }
+    }
+
+    this.gotoPrevStation = () => {
+      var prevId = this.station.prevId;
+      if(prevId) {
+        this.stateStore.selectedStationId = prevId;
+      }
     }
