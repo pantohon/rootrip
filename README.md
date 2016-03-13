@@ -5,8 +5,8 @@
 ### TO Run
 
 ```
-npm install .
-gulp
+$ npm install .
+$ gulp
 ```
 
 - ES6化はあとでやる
