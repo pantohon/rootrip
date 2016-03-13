@@ -8,5 +8,6 @@ require('./tags/rm-main.tag')
 
 require('./tags/rc-panel.tag')
 require('./tags/rc-panelItem.tag')
+require('./tags/rc-spotCard.tag')
 
 riot.mount('*')
