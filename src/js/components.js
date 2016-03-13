@@ -1,12 +1,12 @@
-import riot from 'riot'
+var riot = require('riot')
 
-import './custom-tag/rootrip-app.tag'
-import './custom-tag/rootrip-portal.tag'
-import './custom-tag/rootrip-container.tag'
-import './custom-tag/rootrip-playbar.tag'
-import './custom-tag/rootrip-player.tag'
+require('./tags/rp-root.tag')
+require('./tags/rm-header.tag')
+require('./tags/rm-routeSelector.tag')
+require('./tags/rm-stationSelector.tag')
+require('./tags/rm-main.tag')
 
-import './custom-tag/rootrip-spots.tag'
-import './custom-tag/rootrip-spot.tag'
+require('./tags/rc-panel.tag')
+require('./tags/rc-panelItem.tag')
 
-riot.mount('*');
+riot.mount('*')

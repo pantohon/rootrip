@@ -1,32 +1,11 @@
 doctype html
 html(lang="ja")
   head
+    meta(charset="utf-8")
     title るーとりっぷ
+    link(rel="stylesheet" type="text/css" href="./style/reset.css")
 
   body
-    rootrip-app
+    rp-root
 
-  style.
-    * {
-      box-sizing: border-box;
-    }
-    
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Clear Sans', 'Avenir', Arial, sans-serif;
-    }
-    
-    ul, li {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    h1, h2, h3, h4, h5, p {
-      padding: 0;
-      margin: 0;
-    }
-
-  script(src='js/bundle.js')
+  script(src="js/bundle.js")
