@@ -1,8 +1,12 @@
 <rm-main>
-  <h2>Spots</h2>
-  <ul>
-    <li each="{ opts.spots }">
-      <a href="{ "#routes/" + routeId + "/stations/" + stationId + "/spots/" + id }">{ name }</a>
-    </li>
-  </ul>
+  <div class="main_wrapper">
+    <h2>Spots</h2>
+    <rc-spotCard each="{ spot in opts.spots }"></rc-spotCard>
+  </div>
+
+  <style>
+    .main_wrapper {
+      width: 100%;
+    }
+  </style>
 </rm-main>
