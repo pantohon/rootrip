@@ -14,8 +14,12 @@
     "gulp": "^3.9.1",
     "gulp-jade": "^1.1.0",
     "gulp-webserver": "^0.9.1",
+    "lodash.assign": "^4.0.6",
+    "require-dir": "^0.3.0",
+    "rimraf": "^2.5.2",
     "riot": "^2.3.16",
     "riotify": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
   }
 }
