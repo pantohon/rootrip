@@ -1,5 +1,15 @@
-node_modules
-bower_components
-dist
+#
 .DS_Store
 *~
+
+# Logs
+logs
+*.log
+
+# Dependency directory
+node_modules
+
+dist/
+build/
+.idea
+*.iml
