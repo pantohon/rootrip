@@ -3,7 +3,7 @@
 
   <rm-routeSelector routes="{ routes.list }"></rm-routeSelector>
 
-  <rm-stationSelector stations="{ stations }"></rm-stationSelector>
+  <rm-stationSelector stations="{ stations.list }"></rm-stationSelector>
 
   <rm-main spots="{ spots }"></rm-main>
 
@@ -24,14 +24,12 @@
       ]
     }
 
-    // self.routes = [
-    //   { id: 'enoden', name: '江ノ島電鉄線', data: ''}
-    // ]
-
-    self.stations = [
-      { id: 'kamakura', name: '鎌倉'},
-      { id: 'wadaduka', name: '和田塚'}
-    ]
+    self.stations = {
+      list: [
+        { id: '11', name: '鎌倉', slug: 'kamakura', nextId: '12', description: '鎌倉駅です。'},
+        { id: '12', name: '和田塚', slug: 'wadaduka', prevId: '11', nextId: '13', description: '和田塚駅です。'}
+      ]
+    }
 
     self.spots = [
       { id: 'yuzan', name: '遊山'}
@@ -53,19 +51,19 @@
     }
 
     function route(routeId) {
-      var selectedRoute = self.routes.filter(function(d) { return d.id == routeId })[0] || {}
+      var selectedRoute = self.routes.filter(function(d) { return d.slug == routeId })[0] || {}
       self.update({
-        routeId: selectedRoute.id,
+        routeId: selectedRoute.slug,
         stationId: '',
         spotId: ''
       })
     }
 
     function station(routeId, stationId) {
-      var selectedStation = self.stations.filter(function(d) { return d.id == stationId })[0] || {}
+      var selectedStation = self.stations.filter(function(d) { return d.slug == stationId })[0] || {}
       self.update({
         routeId: self.routeId,
-        stationId: selectedStation.id,
+        stationId: selectedStation.slug,
         spotId: ''
       })
     }

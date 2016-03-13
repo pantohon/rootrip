@@ -1,10 +1,7 @@
-るーとりっぷ(raptor)
-==================
-
-- beta version for [rootrip](https://github.com/pantohon/rootrip).
+るーとりっぷ
+==========
 
 tips.
 -----
 
-- タグはHTMLで記述(ルーティングができたらJadeへ移行)
-- ES6化は更にそのあと
+- ES6化はあとでやる
