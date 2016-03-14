@@ -16,7 +16,7 @@ gulp.task('serve', ['frontend', 'backend'], function() {
 
 gulp.task('watch', function() {
     // frontend
-    gulp.watch('src/js/**/*', function(ev) {
+    gulp.watch('src/frontend/script/**/*', function(ev) {
         gulp.start('frontend');
     });
 });

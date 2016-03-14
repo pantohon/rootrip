@@ -1,22 +1,20 @@
-<rp-root>
-  <div class="root_wrapper">
-    <rm-header></rm-header>
+rp-root
+  .root_wrapper
+    rm-header
 
-    <rm-routeSelector routes="{ routes.list }"></rm-routeSelector>
+    rm-routeSelector(routes="{ routes.list }")
 
-    <rm-stationSelector stations="{ stations.list }"></rm-stationSelector>
+    rm-stationSelector(stations="{ stations.list }")
 
-    <rm-main spots="{ spots.list }"></rm-main>
-  </div>
+    rm-main(spots="{ spots.list }")
 
-  <style>
+  style.
     .root_wrapper {
       width: 100%;
       height: 100%;
     }
-  </style>
 
-  <script>
+  script.
     var self = this
 
     riot.route.base('#')
@@ -102,6 +100,3 @@
         spotId: selectedSpot.id
       })
     }
-
-  </script>
-</rp-root>

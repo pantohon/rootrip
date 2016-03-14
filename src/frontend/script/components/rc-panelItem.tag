@@ -1,12 +1,10 @@
-<rc-panelItem>
-  <div class="panelItem_wrapper">
-    <div class="itemImage" show="{ item.image }">
-      <img riot-src="{ item.image }">
-    </div>
-    <div class="itemName">{ item.id }: { item.name }</div>
-  </div>
+rc-panelItem
+  .panelItem_wrapper
+    .itemImage(show="{ item.image }")
+      img(riot-src="{ item.image }")
+    .itemName { item.id }: { item.name }
 
-  <style>
+  style.
     .panelItem_wrapper {
       position: relative;
       flex-direction: column;
@@ -28,6 +26,3 @@
       font-size: 18px;
       background-color: rgba(255, 167, 38, 0.5);;
     }
-  </style>
-
-</rc-panelItem>

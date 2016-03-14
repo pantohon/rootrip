@@ -6,21 +6,21 @@ var srcDir = 'src';
 module.exports = {
     backend: {
         src: [
-            srcDir + '/index.jade'
+            srcDir + '/backend/index.jade'
         ],
         dest: destDir
     },
     frontend: {
         script: {
             src: [
-                srcDir + '/js/components.js'
+                srcDir + '/frontend/script/index.js'
             ],
             dest: destDir + '/js',
             bundleName: 'bundle.js'
         },
         styles: {
             src: [
-                srcDir + '/style/**/*.css'
+                srcDir + '/frontend/style/**/*'
             ],
             dest: destDir + '/style'
         }
