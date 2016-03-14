@@ -1,12 +1,9 @@
-<rc-panel>
-  <div class="panel_wrapper">
-    <rc-panelItem each="{ item in opts.data }"></rc-panelItem>
-  </div>
+rc-panel
+  .panel_wrapper
+    rc-panelItem(each="{ item in opts.data }")
 
-  <style>
+  style.
     .panel_wrapper {
       display: flex;
-      flex-direction: row;     
+      flex-direction: row;
     }
-  </style>
-</rc-panel>

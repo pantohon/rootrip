@@ -1,12 +1,9 @@
-<rm-main>
-  <div class="main_wrapper">
-    <h2>Spots</h2>
-    <rc-spotCard each="{ spot in opts.spots }"></rc-spotCard>
-  </div>
+rm-main
+  .main_wrapper
+    h2 Spots
+    rc-spotCard(each="{ spot in opts.spots }")
 
-  <style>
+  style.
     .main_wrapper {
       width: 100%;
     }
-  </style>
-</rm-main>

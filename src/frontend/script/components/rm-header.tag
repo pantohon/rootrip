@@ -1,3 +1,3 @@
-<rm-header>
-  <h1 class="header-title">るーとりっぷ</h1>
-</rm-header>
+rm-header
+  header
+    h1.header-title るーとりっぷ
