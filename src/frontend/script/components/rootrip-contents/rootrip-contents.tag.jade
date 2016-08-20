@@ -1,0 +1,34 @@
+rootrip-contents
+  .spotSelector
+    ul
+      li { spotTitle }
+      li { spotTitle2 }
+  .spotContent
+    .spotHeader
+      .spotTitle { spotTitle }
+    .spotArticle
+      p { spotMessage }
+
+  style(scoped).
+    :scope {
+      display: block;
+      background-color: grey;
+      height: 65%;
+    }
+    
+    .spotHeader {
+      background-color: lightblue;
+    }
+    
+    .spotTitle {
+      font-size: 1.5em;
+    }
+    
+  script.
+    var tag = this;
+
+    // sample message
+    tag.spotTitle = 'ルーフトップス';
+    tag.spotMessage = '鎌倉駅すぐ、絶景テラスのカフェ＆ダイナー';
+
+    tag.spotTitle2 = '鶴岡八幡宮';

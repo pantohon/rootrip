@@ -25,7 +25,7 @@ gulp.task('script', function() {
         entries: config.script.src,
         debug: false
     })
-        .transform(riotify, { template: 'jade' })
+        .transform(riotify, { template: 'jade', ext: 'tag.jade' })
         .bundle()
         .on("error", function(err) { console.log("Error: " + err.message); })
         .pipe(source(config.script.bundleName))

@@ -1,0 +1,28 @@
+rootrip-header
+  .header_wrapper
+    header
+      .header_title るーとりっぷ
+      .route_name { routesList[0].name }
+
+  style.
+    .header_wrapper {
+      background-color: grey;
+      height: 10%;
+    }
+    
+    header {
+      clear: left;
+    }
+    
+    header .header_title {
+      font-size: 2em;
+    }
+    
+    header .route_name {
+      font-size: 1.5em;
+    }
+
+  script.
+    var tag = this;
+    
+    tag.routeList = opts.routeslist || [];
