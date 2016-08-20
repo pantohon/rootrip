@@ -2,7 +2,7 @@ rootrip-header
   .header_wrapper
     header
       .header_title るーとりっぷ
-      .route_name { routesList[0].name }
+      .route_name { selectedRoute.name }
 
   style.
     .header_wrapper {
@@ -25,4 +25,8 @@ rootrip-header
   script.
     var tag = this;
     
-    tag.routeList = opts.routeslist || [];
+    tag.routesList = opts.routeslist;
+
+    console.log(opts);
+
+    tag.selectedRoute = tag.routesList[0];

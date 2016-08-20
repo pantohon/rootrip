@@ -26,6 +26,5 @@ rootrip-root
       .query()
       .end(function(err, res) {
         tag.list = res.body.list;
-        console.log(tag.list); // test
         tag.update();
       });
