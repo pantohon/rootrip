@@ -1,0 +1,27 @@
+rootrip-root
+  .root_wrapper  
+    rootrip-header(routeslist="{ list }")
+    
+    rootrip-navbar
+    
+    rootrip-spot-viewer
+  
+  style.
+    .root_wrapper {
+      width: 100%;
+      height: 100%;
+    }
+  
+  script.
+    var request = require('superagent');
+    
+    var tag = this;
+    tag.list = [];
+    
+    request
+      .get('http://private-299eeb-rootrip.apiary-mock.com/routes')
+      .query()
+      .end(function(err, res) {
+        tag.list = res.body.list;
+        tag.update();
+      });

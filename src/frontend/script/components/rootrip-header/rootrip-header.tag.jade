@@ -1,0 +1,20 @@
+rootrip-header
+  .header_wrapper
+    header
+      .title るーとりっぷ
+      .route_name.caption { selectedRoute.name }
+
+  style.
+    .header_wrapper {
+      background-color: #009688;
+      height: 10%;
+    }
+    
+  script.
+    var tag = this;
+    
+    tag.routesList = opts.routeslist;
+
+    console.log(opts);
+
+    tag.selectedRoute = tag.routesList[0];

@@ -1,0 +1,13 @@
+.title {
+  font-size: 2em;
+}
+
+.caption {
+  font-size: 1.5em;
+}
+
+.btn {
+  width: 40px;
+  font-size: 1.5em;
+  background-color: #FFA500;
+}
