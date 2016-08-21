@@ -1,8 +1,8 @@
 rootrip-spot-viewer
   .spotSelector
     ul
-      li { spotTitle }
-      li { spotTitle2 }
+      li { spotTitle } { spotFarFrom }
+      li { spotTitle2 } { spotFarFrom2 }
   .spotContent
     .spotHeader
       .spotTitle.caption { spotTitle }
@@ -16,15 +16,13 @@ rootrip-spot-viewer
       height: 65%;
     }
     
-    .spotTitle {
-      font-size: 1.5em;
-    }
-    
   script.
     var tag = this;
 
     // sample message
     tag.spotTitle = 'ルーフトップス';
+    tag.spotFarFrom = '3 min';
     tag.spotMessage = '鎌倉駅すぐ、絶景テラスのカフェ＆ダイナー';
 
     tag.spotTitle2 = '鶴岡八幡宮';
+    tag.spotFarFrom2 = '7 min';
