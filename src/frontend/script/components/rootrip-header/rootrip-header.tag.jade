@@ -1,8 +1,8 @@
 rootrip-header
   .header_wrapper
     header
-      .header_title るーとりっぷ
-      .route_name { selectedRoute.name }
+      .title るーとりっぷ
+      .route_name.caption { selectedRoute.name }
 
   style.
     .header_wrapper {
@@ -10,18 +10,6 @@ rootrip-header
       height: 10%;
     }
     
-    header {
-      clear: left;
-    }
-    
-    header .header_title {
-      font-size: 2em;
-    }
-    
-    header .route_name {
-      font-size: 1.5em;
-    }
-
   script.
     var tag = this;
     
